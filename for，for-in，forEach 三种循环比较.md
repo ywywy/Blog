@@ -1,19 +1,18 @@
-# 第六次作业
+# for，for-in，forEach 三种循环比较
 
 ---
 
-> for，for-in，forEach 三种循环比较
-
-1．for循环
+> for循环
 
 ```
 var arr = ["a", "b", "c", "d"];
 	for(var i = 0; i < arr.length; i++) {
 	    console.log(arr[i]);
 }
+//写法上不够简洁，但初学者经常使用
 ```
 
-写法上不够简洁，但初学者经常使用
+---
 
 > for in 循环
 
@@ -27,7 +26,7 @@ var arr = ["a", "b", "c", "d"];
 }
 ```
 
-**（2）无序列（不是按照书写顺序遍历输出）** 
+**（2）无序列（不是按照书写顺序遍历输出）** 
 
 ```
 var obj = {
@@ -52,16 +51,19 @@ var arr = ["a", "b", "c", "d"];
 }
 ```
 
+---
+
 > forEach循环
 
 **forEach循环有两个缺点：**
 
 a.不能中断循环(比如说用break语句或使用return语句）
-
 b.低版本IE浏览器存在兼容性
 
 ```
+
 var arr = ["a", "b", "c", "d"];
+
         arr.forEach(function(value) { //不能跳出循环操作
             console.log(value);
             break;//不起作用，会报错
@@ -70,13 +72,12 @@ var arr = ["a", "b", "c", "d"];
 
 **Math String Array**
 
-a.Math 是一个内置对象，它具有数学常数和函数的属性和方法。
-
-b.与其它全局对象不同的是，Math 不是一个构造器。Math的所有属性和方法都是静态的。
-
+a.Math 是一个内置对象，它具有数学常数和函数的属性和方法。
+b.与其它全局对象不同的是，Math 不是一个构造器。Math的所有属性和方法都是静态的。
 c.Math不是一个函数对象。
 
-类似以下定义：
+**类似以下定义：**
+
 ```
 var Math={
     		//属性和方法
@@ -89,12 +90,9 @@ var Math={
 }
 ```
 
-原型链：
-
-     Math.__proto__ === Object.prototype//true
-     String.__proto__ === Function.prototype//true
-     String.__proto__.__proto__ === Object.prototype//true
-
----
-
-> 方法封装
+**原型链：**
+```
+    Math.__proto__ === Object.prototype//true
+    String.__proto__ === Function.prototype//true
+    String.__proto__.__proto__ === Object.prototype//true
+```
